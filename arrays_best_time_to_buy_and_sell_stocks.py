@@ -1,11 +1,10 @@
 def func(nums):
-    
-    left = right = 0
+    left = 0
     max_profit = 0
-    for right in range(len(nums)):
-        if(nums[right]<nums[left]):
-            left=right
-        max_profit = max(max_profit, nums[right]-nums[left])
+    for i in range(1, len(nums)):
+        if(nums[left]>nums[i]):
+            left = i
+        max_profit = max(max_profit, nums[i] - nums[left])
     return max_profit
 
 
